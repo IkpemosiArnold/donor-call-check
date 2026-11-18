@@ -1,0 +1,9 @@
+{
+  "name": "donor-call-check",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A donor's call for proposals set against a draft proposal package by plain code: which requirements are met, missing or do not match, and which figures differ between documents. Every result points at the paragraph or cell it came from.",
+  "scripts": { "test": "node --test" },
+  "license": "MIT"
+}

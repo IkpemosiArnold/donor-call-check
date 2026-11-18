@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Submission Check</title>
+<meta name="description" content="A donor's call for proposals set against a draft proposal package by plain code: which requirements are met, missing or do not match, and which figures differ between documents. Every result points at the paragraph or cell it came from.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcfc">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0f11">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+  <symbol id="i-none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2.2 2.2"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 16 16"><path d="M6 3.5L10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<main class="shell">
+  <div class="sheet-col">
+    <header class="top">
+      <p class="mark">Submission Check <span class="tag">Sample data</span></p>
+      <h1>Is the proposal package ready to go?</h1>
+      <p class="sub">A made-up foundation's call, set against a made-up draft package. Plain code, no model.</p>
+    </header>
+
+    <section class="reading" aria-label="Result">
+      <p class="summary" id="summary" role="status"><span class="sum-main">Reading</span></p>
+      <p class="summary second" id="summary-docs"></p>
+
+      <h2 class="group-h" id="docs-h">Across the documents</h2>
+      <p class="group-sub">The same figure, wherever the package states it.</p>
+      <div id="docs-rows"></div>
+
+      <h2 class="group-h" id="call-h">Against the call</h2>
+      <p class="group-sub">Each line of the requirement list, checked in the package.</p>
+      <div id="call-rows"></div>
+      <div class="left-note" id="left-note" hidden></div>
+    </section>
+  </div>
+
+  <aside class="evidence-col" id="side" aria-live="polite"></aside>
+
+  <section class="tool" id="list-tool" aria-labelledby="list-h">
+    <h2 id="list-h">Change the requirement list</h2>
+    <p class="tool-sub">Edit a limit, delete a line, or paste the list from another call. One per line: clause, name, colon, rule.</p>
+    <label class="paste-l" for="req-list">Requirement list</label>
+    <textarea id="req-list" rows="9" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+    <button type="button" class="btn text small" id="rules-btn" aria-expanded="false" aria-controls="rules">Rules it can read</button>
+    <div class="rules" id="rules" hidden>
+      <p><code>3.3 Theory of change: max 300 words</code> counts the words under that heading.</p>
+      <p><code>4.4 Annex: Risk matrix</code> looks for every word of the name in one line of the submission folder.</p>
+      <p><code>2.1 Budget ceiling: USD 750,000</code> reads the budget's total request.</p>
+      <p><code>2.2 Indirect costs: max 10% of direct costs</code> divides the indirect line by total direct costs.</p>
+      <p><code>2.3 Duration: 24 to 36 months</code> reads the cover sheet.</p>
+      <p><code>4.1 Outcome indicators: baseline, target</code> looks for blank cells in the logframe.</p>
+    </div>
+    <div class="actions">
+      <button type="button" id="list-check" class="btn primary">Check again</button>
+      <button type="button" id="list-reset" class="btn text">Put back the call's list</button>
+    </div>
+    <p id="list-out" class="list-out" role="status" hidden></p>
+  </section>
+
+  <section class="tool" id="src-tool" aria-labelledby="src-h">
+    <h2 id="src-h">The documents</h2>
+    <p class="tool-sub">Every file the check read, as numbered lines. A line number here is the one each result points at.</p>
+    <div class="pick">
+      <label for="src-pick">File</label>
+      <select id="src-pick"></select>
+    </div>
+    <div id="src-out"></div>
+  </section>
+
+  <footer class="foot" id="foot">
+    <p>For proposal teams doing the last check before a package goes to a donor. Built by Arnold Ikpemosi Adeyemi. Made-up foundation, applicant, places and figures.</p>
+    <p><a href="https://ikpemosi.work">ikpemosi.work</a></p>
+  </footer>
+</main>
+<script type="module" src="app.js?v=1"></script>
+</body>
+</html>
