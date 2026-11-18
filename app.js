@@ -1,5 +1,5 @@
-import { checkAll } from "./check.js?v=1";
-import { files, fileNames, requirements, figures } from "./samples.js?v=1";
+import { checkAll } from "./check.js?v=dcc-r2";
+import { files, fileNames, requirements, figures } from "./samples.js?v=dcc-r2";
 
 const $ = (id) => document.getElementById(id);
 const el = (tag, cls, text) => {
@@ -164,18 +164,20 @@ const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
 function renderSummary() {
   const c = result.counts;
+  const side = [[c.notFound, "not found", "not found"], [c.noMatch, "does not match", "do not match"]].filter(([n]) => n).map(([n, a, b]) => plural(n, a, b));
+  // The hero describes the rows directly under it: the figures across the documents.
   const s = $("summary");
   s.textContent = "";
-  s.append(el("span", "sum-main", `${c.met} of ${c.total} requirements met`));
-  const side = [[c.notFound, "not found", "not found"], [c.noMatch, "does not match", "do not match"]].filter(([n]) => n).map(([n, a, b]) => plural(n, a, b));
-  if (side.length) s.append(el("span", "sum-side", side.join(", ")));
-  const d = $("summary-docs");
+  s.append(el("span", "sum-main", c.differ ? `${plural(c.differ, "figure differs", "figures differ")} between documents` : "The documents agree"));
+  const docsSide = c.docsNotFound ? `${c.docsNotFound} not found. ` : "";
+  s.append(el("span", "sum-side", `${docsSide}${c.met} of ${c.total} call requirements met${side.length ? `, ${side.join(", ")}` : ""}`));
+  // The requirement group carries its own count, right above its rows.
+  const d = $("summary-call");
   d.textContent = "";
   const main = el("span", "sum-main");
-  if (c.differ) main.append(icon("cross", "st-fail"), plural(c.differ, "figure differs", "figures differ"), " between documents");
-  else main.append(icon("check", "st-pass"), "The documents agree");
+  main.append(icon(c.met === c.total ? "check" : "cross", c.met === c.total ? "st-pass" : "st-fail"), `${c.met} of ${c.total} met`);
   d.append(main);
-  if (c.docsNotFound) d.append(el("span", "sum-side", `${c.docsNotFound} not found`));
+  if (side.length) d.append(el("span", "sum-side", side.join(", ")));
 }
 
 function rowButton(t, open, controls, onClick) {

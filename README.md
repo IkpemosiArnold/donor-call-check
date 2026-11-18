@@ -30,13 +30,13 @@ Each result also quotes the call's clause with the limit underlined. Clauses in 
 
 **Across the documents.** Four figures are looked up wherever the package states them: a cover sheet field, a pattern inside a named narrative section, or a spreadsheet cell. If every document agrees, it agrees. If not, the figure most documents give is marked green and the odd one red, and the page says to decide which is right. It never picks the answer. The budget's own arithmetic is checked too.
 
-The sample: **9 of 13 requirements met, 2 not found, 2 do not match. 2 figures differ between documents.**
+The sample: **2 figures differ between documents. 9 of 13 call requirements met, 2 not found, 2 do not match.**
 
 - **2.2 Indirect costs, does not match.** 74,400 on 620,000 of direct costs is 12%. At the 10% cap the line would be 62,000, so it is 12,400 over.
 - **3.3 Theory of change, does not match.** 319 words against 300. The last 19 are underlined.
 - **3.5 Sustainability and exit, not found.** The concept note has no section with that heading.
 - **4.4 Risk matrix, not found.** The submission folder lists no file with those words.
-- **Women taking part, differs.** The cover sheet, concept note and logframe say 1,200. Budget lines 2.1 and 2.2 cost 1,150 participants.
+- **Women taking part, differs.** The cover sheet, concept note and logframe (output 1.1, women enrolled) say 1,200. Budget line 2.1 costs 1,150 participants (line 2.2 uses the same figure).
 - **Total request, differs.** The cover sheet and budget say USD 694,400. The concept note asks for USD 682,000, which is the direct costs plus 10%: a narrative written before the indirect line went up to 12%.
 - **Duration** (36 months) and **savings groups** (64) agree in every document that states them. The budget lines multiply out and add up: 620,000 direct plus 74,400 indirect is 694,400, within the USD 750,000 ceiling.
 
@@ -57,7 +57,7 @@ Every name is made up and was web-searched on 18 Nov 2026 for an exact match:
 
 Two earlier picks were dropped: "Oram" is a place in India and "Telluk" is a near-spelling of Teluk, a common place name in Malaysia and Indonesia. No person is named; the cover sheet's contact is a job title.
 
-Every figure adds up. Budget lines: 216 × 1,250 = 270,000; 36 × 1,600 = 57,600; 1,150 × 90 = 103,500; 1,150 × 60 = 69,000; 48 × 750 = 36,000; 64 × 200 = 12,800; 6 × 4,000 = 24,000; 7,500; 36 × 1,100 = 39,600. Direct total 620,000. Programme: three cohorts of 400 is 1,200 women; 48 discussion groups of 25 is 1,200; 64 savings groups of about 19 is 1,200. The two mismatches above are deliberate and are the only ones.
+Every figure adds up. Budget lines: 216 × 1,250 = 270,000; 36 × 1,600 = 57,600; 1,150 × 90 = 103,500; 1,150 × 60 = 69,000; 48 × 750 = 36,000; 64 × 200 = 12,800; 6 × 4,000 = 24,000; 7,500; 36 × 1,100 = 39,600. Direct total 620,000. Programme: three cohorts of 400 is 1,200 women enrolled, and the logframe plans 1,080 (90%) to complete all 12 months; 48 discussion groups of 25 is 1,200; 64 savings groups of about 19 is 1,200. The two mismatches above are deliberate and are the only ones.
 
 ## Limits
 
@@ -87,7 +87,7 @@ Then open http://localhost:8813. The page makes no network calls beyond its own 
 
 ## Design
 
-Result first: one line that counts the requirements, one that counts the figures that differ, then a row per check, split by hairlines. Opening a row shows the question asked, the call's clause quoted with its limit underlined in grey, and the package's own line or cell with the matched words underlined green or red. Geist for the tool, Newsreader for anything quoted from the call or the package. One deep teal marks what can be pressed.
+Result first: the figures that differ between documents, with the requirement count beside it, then a row per figure. The requirement group has its own count right above its rows. Rows are split by hairlines. Opening a row shows the question asked, the call's clause quoted with its limit underlined in grey, and the package's own line or cell with the matched words underlined green or red. Geist for the tool, Newsreader for anything quoted from the call or the package. One deep teal marks what can be pressed.
 
 Fonts: Geist and Newsreader (SIL Open Font License), in `fonts/`.
 

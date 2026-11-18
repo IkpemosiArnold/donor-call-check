@@ -38,7 +38,7 @@ h1 { font-size: 26px; font-weight: 700; line-height: 1.1; letter-spacing: -.025e
 .summary { margin: 0; font-variant-numeric: tabular-nums; display: flex; flex-wrap: wrap; align-items: baseline; column-gap: var(--s3); }
 .sum-main { font-size: 32px; font-weight: 700; letter-spacing: -.025em; line-height: 1.1; }
 .sum-side { font-size: 17px; color: var(--muted); }
-.summary.second { margin-top: var(--s2); }
+.summary.second { margin: var(--s1) 0 var(--s2); }
 .summary.second .sum-main { font-size: 20px; letter-spacing: -.015em; display: inline-flex; align-items: center; gap: 6px; }
 .summary.second .sum-main svg { width: 16px; height: 16px; flex: none; }
 .group-h { font-size: 17px; font-weight: 700; letter-spacing: -.01em; margin: var(--s6) 0 0; }

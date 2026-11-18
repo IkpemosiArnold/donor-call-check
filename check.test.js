@@ -90,6 +90,10 @@ test("women taking part: cover, concept note and logframe say 1,200; the budget 
     ["Logframe, 1.1 target", "1,200", "pass", "1200"],
     ["Budget, line 2.1 units", "1,150", "fail", "1150 participants"],
   ]);
+  // Taking part is enrolment (output 1.1), not completion (output 1.3, 1,080).
+  const lf = f.facts.find((x) => x.label.startsWith("Logframe")).refs[0];
+  assert.match(files["logframe.csv"].split("\n")[lf.line - 1], /Women enrolled in a 12-month cohort/);
+  assert.match(files["logframe.csv"], /Women completing all 12 months,0,1080,/);
 });
 
 test("total request: cover and budget say USD 694,400; the concept note says USD 682,000", () => {

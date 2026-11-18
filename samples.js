@@ -63,7 +63,7 @@ At the same time, women meet in 48 discussion groups of 25. A trained facilitato
 We assume that markets stay open and that roads stay passable for most of the year. We also assume that village leaders keep their support, which they gave in writing during the assessment. Where these assumptions fail, cohorts will pause and restart rather than continue under unsafe conditions, and the risk will be reviewed with the Foundation.
 
 ## 4. MEAL plan
-An external team will survey every participant at baseline, before her cohort starts training, and again at endline, twelve months later. The survey measures income from the woman's own work and her say over household spending, the two outcome indicators in the logframe. Attendance registers, payment records, group record books and facilitator logs track the outputs every month.
+An external team will survey every participant at baseline, before her cohort starts training, and again at endline, twelve months later. The survey measures income from the woman's own work and her say over household spending, the two outcome indicators in the logframe, and whether she can meet her household's basic needs, the impact indicator. Attendance registers, payment records, group record books and facilitator logs track the outputs every month.
 A MEAL officer checks a sample of records each quarter and reports to the programme team. A midline review after the first cohort tests whether the training trades still match what markets pay for.
 Participants can give feedback through a free phone line run by staff outside the programme team, a suggestion box at each training site, and a meeting with each cohort every quarter. Every complaint is logged, answered within ten working days and reported to the Foundation every six months.
 
@@ -76,8 +76,9 @@ const logframe = `level,code,result,indicator,baseline,target,means_of_verificat
 Impact,0,Women affected by conflict in Kalvero and Sorvane have more control over their income and their lives,% of participants who say they can meet their household's basic needs,24%,50%,Baseline and endline household survey
 Outcome,1,Women earn a steadier income from their own work,Average monthly income from own enterprise (USD),18,40,Baseline and endline household survey
 Outcome,2,Women have a greater say at home and in their community,% of participants who have a say in how household money is spent,31%,55%,Baseline and endline household survey
-Output,1.1,Women complete vocational and business skills training,Women completing 12 months of training,0,1200,Attendance registers
-Output,1.2,Women receive a monthly stipend while training,Women receiving all 12 stipend payments,0,1200,Payment records
+Output,1.1,Women enrol in vocational and business skills training,Women enrolled in a 12-month cohort,0,1200,Attendance registers
+Output,1.2,Women receive a monthly stipend while training,Women receiving a monthly stipend,0,1200,Payment records
+Output,1.3,Women complete the 12 months of training,Women completing all 12 months,0,1080,Attendance registers
 Output,2.1,Savings groups are formed and keep meeting,Savings groups meeting at least monthly,0,64,Group record books
 Output,2.2,Women's discussion groups complete the curriculum,Discussion groups completing all 12 sessions,0,48,Facilitator logs
 `;
